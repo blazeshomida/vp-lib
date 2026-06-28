@@ -1,0 +1,57 @@
+{
+  "name": "vp-lib",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A minimal Vite+ TypeScript library template for a single publishable npm package.",
+  "keywords": [
+    "library",
+    "template",
+    "typescript",
+    "vite-plus"
+  ],
+  "homepage": "https://github.com/blazeshomida/vp-lib#readme",
+  "bugs": {
+    "url": "https://github.com/blazeshomida/vp-lib/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blazeshomida/vp-lib.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "changeset": "changeset",
+    "check": "vp run task:check",
+    "dev": "vp run task:dev",
+    "fmt": "vp run task:fmt",
+    "lint": "vp run task:lint",
+    "pack": "vp run task:pack",
+    "ready": "vp run task:ready",
+    "release": "vp run task:ready && changeset publish",
+    "test": "vp run task:test",
+    "version": "changeset version"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.7.0",
+    "@changesets/cli": "^2.31.0",
+    "typescript": "^6.0.3",
+    "vite": "npm:@voidzero-dev/vite-plus-core@^0.2.1",
+    "vite-plus": "^0.2.1"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "packageManager": "pnpm@11.9.0"
+}
