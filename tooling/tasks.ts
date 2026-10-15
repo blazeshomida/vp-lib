@@ -49,13 +49,17 @@ export const tasks = {
 
   "task:pack": {
     command: "vp pack",
-    input: taskInput,
-    output: [rootOutput("dist/**")],
+    cache: {
+      input: taskInput,
+      output: [rootOutput("dist/**")],
+    },
   },
 
   "task:test": {
     command: "vp test",
-    input: taskInput,
+    cache: {
+      input: taskInput,
+    },
   },
 
   // Formatting mutates source files, so it should always run instead of using a
@@ -67,13 +71,17 @@ export const tasks = {
 
   "task:lint": {
     command: "vp lint",
-    input: taskInput,
+    cache: {
+      input: taskInput,
+    },
   },
 
   // Vite+ check runs formatting, linting, and TypeScript checks together.
   "task:check": {
     command: "vp check",
-    input: taskInput,
+    cache: {
+      input: taskInput,
+    },
   },
 
   "task:ready": {
